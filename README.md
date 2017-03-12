@@ -1,4 +1,4 @@
-# womentor
+# WoMentor
 
 ## CONCEPT: a platform which helps you (a woman in tech) to find a mentor!
 * for self-identifying women!
