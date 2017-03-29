@@ -1,0 +1,13 @@
+main {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.circle {
+  background-color: yellow;
+  border-radius: 50%;
+}
