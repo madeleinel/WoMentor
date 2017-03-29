@@ -16,7 +16,8 @@ a {
 }
 
 header {
-  background-color: lightGreen;
+  background-color: #5B5980;
+  color: white;
   height: 10rem;
 }
 
@@ -72,7 +73,8 @@ footer {
   width: 100vw;
   position: fixed;
   bottom: 0;
-  background-color: lightGreen;
+  background-color: #5B5980;
+  color: white;
   font-family: 'Lato', sans-serif;
   display: -webkit-flex;
   display: -ms-flex;
