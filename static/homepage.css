@@ -35,12 +35,17 @@ main {
   height: 400px;
   width: 400px;
   border-radius: 50%;
-  text-align: center;
+
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 a .signup {
   color: white;
-  font-size: 4em;
+  font-size: 2em;
   font-family: 'Macondo', cursive;
 }
 
