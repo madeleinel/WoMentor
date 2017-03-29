@@ -17,11 +17,11 @@ a {
 
 header {
   background-color: lightGreen;
-  height: 8rem;
+  height: 10rem;
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 6em;
   padding: 4vh;
   display: -webkit-flex;
   display: -ms-flex;
@@ -57,7 +57,6 @@ main {
 a .signup {
   color: white;
   font-size: 2em;
-  /*font-family: 'Macondo', cursive;*/
 }
 
 #menteeSignup {
@@ -74,6 +73,10 @@ footer {
   position: fixed;
   bottom: 0;
   background-color: lightGreen;
-  text-align: center;
-  font-family: "Verdana", sans-serif;
+  font-family: 'Lato', sans-serif;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
