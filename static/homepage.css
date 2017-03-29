@@ -1,3 +1,26 @@
+* {
+  border: 1px solid red;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: cadetBlue;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background-color: lightGreen;
+  height: 8rem;
+}
+
+h1 {
+  text-align: center;
+}
+
 main {
   display: -webkit-flex;
   display: -ms-flex;
@@ -5,9 +28,30 @@ main {
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  justify-content: space-around;
 }
 
-.circle {
-  background-color: yellow;
+.btn {
+  height: 400px;
+  width: 400px;
   border-radius: 50%;
+  text-align: center;
+}
+
+a .signup {
+  color: white;
+  font-size: 4em;
+  font-family: 'Macondo', cursive;
+}
+
+#menteeSignup {
+  background-image: url("../static/images/mentee_placeholder.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+#mentorSignup {
+  background-image: url("../static/images/mentor_placeholder.jpeg");
+  background-size: cover;
+  background-position: center;
 }
