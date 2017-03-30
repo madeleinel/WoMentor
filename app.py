@@ -1,5 +1,21 @@
+import ConfigParser
+from cordb import db
 from flask import Flask, render_template
+from flask_data_models import User, Offer, Languages, Skills
+from flask_sqlalchemy import SQLAlchemy
+
+
+# config importing
+config = ConfigParser.ConfigParser()
+config.readfp(open('twitoauth.cfg'))
+username = config.get('PostgresDB', 'user')
+password = config.get('PostgresDB', 'password')
+portnum = config.get('PostgresDB', 'port')
+dbname = config.get('PostgresDB', 'dbname')
+
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://{}:{}@{}/{}'.format(username, password, portnum, dbname)
+db.init_app(app)
 
 # to publish the main page
 @app.route("/")
@@ -15,6 +31,17 @@ def showMenteeSignup():
 @app.route("/mentor_signup")
 def showMentorSignup():
     return render_template("mentorSignup.html")
+
+# to show a list of mentors, temporary placement just so i can test stuff
+@app.route("/mentors")
+def showMentorList():
+    mentor = db.session.query(User).filter_by(mentor_mentee="mentor").first()
+    print mentor.uid
+    print mentor.twitter_handle
+    # mentordict = [{ "twitter": "fluffyunicorn", "languages": "javascript", "offer": "gestting started" }, { "twitter": "sallyjane", "languages": "haskell", "offer": "career advice"}]
+    # TO DO: adapt this to work with multiple offers/languages/etc by making a string out of them
+    return render_template("mentorlist.html", nomentors=True)
+    # False, mentorlist=mentordict)
 
 if __name__ == "__main__":
     app.run()
