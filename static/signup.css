@@ -1,0 +1,11 @@
+header {
+  height: 6rem;
+}
+
+h2 {
+  font-size: 4rem;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+}

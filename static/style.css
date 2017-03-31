@@ -19,11 +19,11 @@ a {
 header {
   background-color: #5B5980;
   color: white;
-  height: 10rem;
+  height: 22vh;
 }
 
 h1 {
-  font-size: 6em;
+  font-size: 6rem;
   padding: 4vh;
   display: -webkit-flex;
   display: -ms-flex;
@@ -43,8 +43,11 @@ main {
 }
 
 .btn {
-  height: 400px;
-  width: 400px;
+  /*height: 400px;
+  width: 400px;*/
+
+  height: 25rem;
+  width: 25rem;
   border-radius: 50%;
   margin-top: 8vh;
   display: -webkit-flex;
@@ -58,7 +61,7 @@ main {
 
 a .signup {
   color: white;
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 #menteeSignup {
