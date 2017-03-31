@@ -1,5 +1,5 @@
 import ConfigParser
-from add_to_db import addUserToDB, addLangs, addSkills, addOffer
+from add_to_db import addUserToDB, addLangs, addSkills, addOffer, dbCheck
 from tweetparse import tweetParse
 import tweepy
 
@@ -23,10 +23,15 @@ class MyStreamListener(tweepy.StreamListener):
         tweet_id_str = status.id_str
         twit_handle = status.user.screen_name
         mentor_mentee, languages,skills, offers = tweetParse(status.text.encode('utf-8'))
-        newUser = addUserToDB(mentor_mentee, user_id_str, tweet_id_str, twit_handle)
-        addLangs(newUser, languages)
-        addSkills(newUser, skills)
-        addOffer(newUser, offers)
+        #query db for if user exists already as mentor/mentee
+        dbCheckBool = dbCheck(user_id_str, mentor_mentee)
+        if dbCheckBool == False:
+            newUser = addUserToDB(mentor_mentee, user_id_str, tweet_id_str, twit_handle)
+            addLangs(newUser, languages)
+            addSkills(newUser, skills)
+            addOffer(newUser, offers)
+        else:
+            print "User already exists!"
 
 # creatig an instance of our class at this variable
 myStreamListener = MyStreamListener()

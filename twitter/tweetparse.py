@@ -60,7 +60,6 @@ def checkTheLists(langstore, skillstore):
             for skill in skills:
                 skillstore.append(skill)
     if len(skillstore) > 4:
-        print skillstore
         skillstore = skillstore[:3]
         skillstore.append('and more...')
     return langs, skillstore
