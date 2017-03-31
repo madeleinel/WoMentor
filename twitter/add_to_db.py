@@ -2,8 +2,8 @@ import ConfigParser
 from dbconnect import session, User, Offer, Skills, Languages
 from tweetparse import tweetParse
 
-def addUserToDB(mentor, twit_id):
-    userVar = User(mentor_mentee=mentor, twitter_handle=twit_id)
+def addUserToDB(mentor, twit_uid, tweet_id, screenname):
+    userVar = User(mentor_mentee=mentor, twitter_uid=twit_uid, original_tweet_id=tweet_id, scrn_name=screenname)
     session.add(userVar)
     session.commit()
     return userVar
