@@ -4,7 +4,9 @@ from cordb import db
 class User(db.Model):
     uid = db.Column(db.Integer, primary_key=True)
     mentor_mentee = db.Column(db.String(100), nullable=False)
-    twitter_handle = db.Column(db.String(20), unique=True, nullable=False)
+    twitter_uid = db.Column(db.String(100), nullable=False)
+    original_tweet_id = db.Column(db.String(100), nullable=False)
+    scrn_name = db.Column(db.String(20), nullable=False)
     offer = db.relationship('Offer', backref='useroffer', lazy='dynamic')
     skills = db.relationship('Skills', backref='skillset', lazy='dynamic')
     languages = db.relationship('Languages', backref='polyglot', lazy='dynamic')

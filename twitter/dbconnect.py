@@ -15,7 +15,9 @@ class User(Base):
     __tablename__ = 'user'
     uid = Column(Integer, primary_key=True)
     mentor_mentee = Column(String(100), nullable=False)
-    twitter_handle = Column(String(20), unique=True, nullable=False)
+    twitter_uid = Column(String(100), nullable=False)
+    original_tweet_id = Column(String(100), nullable=False)
+    scrn_name = Column(String(20), nullable=False)
     offer = relationship('Offer', backref='useroffer', lazy='dynamic')
     skills = relationship('Skills', backref='skillset', lazy='dynamic')
     languages = relationship('Languages', backref='polyglot', lazy='dynamic')
