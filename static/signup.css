@@ -8,7 +8,9 @@ body {
 }
 
 h2 {
+  font-family: 'Macondo', cursive;
   font-size: 4rem;
+  color: white;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
@@ -16,22 +18,28 @@ h2 {
 }
 
 h3 {
+  font-family: 'Macondo', cursive;
   font-size: 2rem;
-  padding: 2rem 0;
-}
-
-h5, p {
-  font-family: 'Lato', sans-serif;
+  color: white;
+  padding: 1rem 0;
 }
 
 h4 {
-  font-size: 1.5rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.circle h4 {
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.rectangle h4 {
+  margin-bottom: 1.5rem;
 }
 
 p {
-  padding: 0 1rem;
+  padding: 0 1.5rem;
+  line-height: 1.4rem;
 }
 
 header {
@@ -54,25 +62,53 @@ main {
   -ms-flex-direction: row;
   flex-direction: row;
   flex-wrap: wrap;
+
+  justify-content: center;
 }
 
 .column {
-  height: 14rem;
-  width: 14rem;
-
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
 .circle {
+  height: 14rem;
+  width: 14rem;
   border-radius: 50%;
   background-color: white;
   margin: 1rem;
-  /*background-color: #5B5980;
-  color: white;*/
+}
+
+.rectangle {
+  background-color: white;
+  width: 50vw;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 3rem;
+}
+
+.tweet img {
+  width: 50vw;
+  border-radius: 0.5rem;
+  margin: 3rem;
+}
+
+.btn_tweetUs {
+  /*padding: 2rem;*/
+  background-image: url("../static/images/tweetUs_placeholder.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.tweetUs {
+  margin-top: 2.8rem;
+  text-shadow: 1px 2px 2px black;
+}
+
+footer {
+  position: relative;
 }
