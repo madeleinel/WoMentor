@@ -19,3 +19,21 @@
 * Clone the repo
 * Run "python app.py" in the command line
 * Go to http://127.0.0.1:5000/ or http://127.0.0.1:5000/mentee_signup or http://127.0.0.1:5000/mentor_signup to see the current content
+
+## To start the database and create the tables from scratch
+(ensure you have a valid address for a db)
+navigate to your project folder and open the python interpreter
+
+```
+yourMachine:projectFolder yourUser$ python
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 12:39:47)
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from cordb import db
+>>> from app import create_app
+>>> app = create_app()
+>>> app.app_context().push()
+>>> db.create_all()
+```
+
+if you open the db you should now see that the empty tables have been created as specified in the `flask_data_models.py` file
