@@ -117,9 +117,12 @@ main {
 .rectangle {
   background-color: white;
   width: 50vw;
-  /*border-radius: 2rem;*/
+  min-height: 16vh;
   margin: 1rem;
   padding: 3rem;
+
+  -webkit-clip-path: polygon(92% 0, 100% 50%, 92% 100%, 0% 100%, 8% 50%, 0% 0%);
+  clip-path: polygon(92% 0, 100% 50%, 92% 100%, 0% 100%, 8% 50%, 0% 0%);
 }
 
 .tweet img {
