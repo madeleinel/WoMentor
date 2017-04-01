@@ -7,7 +7,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Macondo', cursive;
+  font-family: 'Lato', sans-serif;
+  /*font-family: 'Macondo', cursive;*/
   height: 100vh;
   overflow: hidden; /* To disable on smaller screens */
 }
@@ -18,12 +19,13 @@ a {
 
 header {
   background-color: #5B5980;
-  color: white;
-  height: 10rem;
+  height: 22vh;
 }
 
 h1 {
-  font-size: 6em;
+  font-family: 'Macondo', cursive;
+  font-size: 6rem;
+  color: white;
   padding: 4vh;
   display: -webkit-flex;
   display: -ms-flex;
@@ -43,8 +45,11 @@ main {
 }
 
 .btn {
-  height: 400px;
-  width: 400px;
+  /*height: 400px;
+  width: 400px;*/
+
+  height: 25rem;
+  width: 25rem;
   border-radius: 50%;
   margin-top: 8vh;
   display: -webkit-flex;
@@ -57,16 +62,17 @@ main {
 }
 
 a .signup {
+  font-family: 'Macondo', cursive;
+  font-size: 2rem;
   color: white;
-  font-size: 2em;
 }
 
 #menteeSignup {
-  background-image: url("../static/images/mentee_placeholder.jpeg");
+  background-image: url("../static/images/mentee_signup.jpeg");
 }
 
 #mentorSignup {
-  background-image: url("../static/images/mentor_placeholder.jpeg");
+  background-image: url("../static/images/mentor_signup.jpeg");
 }
 
 footer {

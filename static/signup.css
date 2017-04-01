@@ -1,0 +1,117 @@
+* {
+  /*border: 1px solid blue;*/
+}
+
+body {
+  overflow: scroll;
+  background-color: #5B5980;
+}
+
+h2 {
+  font-family: 'Macondo', cursive;
+  font-size: 4rem;
+  color: white;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+}
+
+h3 {
+  font-family: 'Macondo', cursive;
+  font-size: 2rem;
+  color: white;
+  padding: 1rem 0;
+}
+
+.btn_tweetUs h3 {
+  margin-top: 2.8rem;
+  text-shadow: 1px 2px 2px black;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+.circle h4 {
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.rectangle h4 {
+  margin-bottom: 1.5rem;
+}
+
+p {
+  padding: 0 1.5rem;
+  line-height: 1.4rem;
+}
+
+header {
+  height: 6rem;
+}
+
+main {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.row {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+
+.column {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.circle {
+  height: 14rem;
+  width: 14rem;
+  border-radius: 50%;
+  background-color: white;
+  margin: 1rem;
+}
+
+.rectangle {
+  background-color: white;
+  width: 50vw;
+  border-radius: 2rem;
+  margin: 1rem;
+  padding: 3rem;
+}
+
+.tweet img {
+  width: 50vw;
+  border-radius: 0.5rem;
+  margin: 3rem;
+}
+
+.btn_tweetUs {
+  /*padding: 2rem;*/
+  background-image: url("../static/images/tweetUs_placeholder.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 14rem;
+  width: 14rem;
+  border-radius: 50%;
+}
+
+footer {
+  position: relative;
+}
