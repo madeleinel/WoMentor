@@ -41,7 +41,7 @@ def showMentorSignup():
 def showMentorList():
     mentor = db.session.query(User).filter_by(mentor_mentee="mentor").first()
     print mentor.uid
-    print mentor.twitter_handle
+    print mentor.scrn_name
     # mentordict = [{ "twitter": "fluffyunicorn", "languages": "javascript", "offer": "gestting started" }, { "twitter": "sallyjane", "languages": "haskell", "offer": "career advice"}]
     # TO DO: adapt this to work with multiple offers/languages/etc by making a string out of them
     return render_template("mentorlist.html", nomentors=True)

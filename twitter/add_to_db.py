@@ -61,6 +61,15 @@ def addOffer(user, offlist):
             session.add(offVar)
             session.commit()
 
+def dbCheck(user_id_str, mentor_mentee):
+    dbCheckBool = False
+    userList = session.query(User).filter_by(twitter_uid=user_id_str).all()
+    for user in userList:
+        if user.mentor_mentee == mentor_mentee:
+            dbCheckBool = True;
+    return dbCheckBool
+
+# mentor = session.query(User).filter_by(="mentor").first()
 # mentor_status, langs, skill, offer = tweetParse('#WomenToTech #Mentor -langs: javascript, python, haskell -skill: node.js, d3.js, jinja2 -offering: help getting started')
 #
 # user_one = addUserToDB(mentor_status, 'tragiccabbage')
