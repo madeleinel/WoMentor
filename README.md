@@ -19,3 +19,24 @@
 * Clone the repo
 * Run "python app.py" in the command line
 * Go to http://127.0.0.1:5000/ or http://127.0.0.1:5000/mentee_signup or http://127.0.0.1:5000/mentor_signup to see the current content
+
+## To create a virtual environment
+* [Detailed documentation can be found on the Hitchhiker's guide to Python](http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/)
+* Alternatively just follow the instructions below!
+  * If you don't already have virtualenv installed you should install it and navigate to your project folder
+  * Create the environment using `virtualenv **environment-name**`
+  * Enter the environment with `source **environment-name**/bin/activate`
+  * You should then be inside the environment and can install the required packages from `requirements.txt` with `pip install -r requirements.txt`
+  * When you're finished working in the environment you can `deactivate` it
+```
+$ pip install virtualenv
+$ cd womentor_project_folder
+$ virtualenv womentor_env
+$ source womentor_env/bin/activate
+(womentor_env) $ pip install -r requirements.txt
+(womentor_env) $ deactivate
+$
+```
+  * you should only need to do this step once, after that you can just run the environment, freezing your `requirements.txt` file as needed!
+  * we can then be sure that we're running the same versions of whatever we packages we are using
+  * it should also stop any interference between other packages you might have that are not used in the project
