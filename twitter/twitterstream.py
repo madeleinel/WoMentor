@@ -5,7 +5,7 @@ import tweepy
 
 # get keys from config
 config = ConfigParser.ConfigParser()
-config.readfp(open('twitoauth.cfg'))
+config.readfp(open('../twitoauth.cfg'))
 consumer_key = config.get('Consumer Keys', 'consumer_key')
 consumer_secret = config.get('Consumer Keys', 'consumer_secret')
 access_token = config.get('Access Keys', 'access_token')
@@ -14,7 +14,6 @@ access_token_secret = config.get('Access Keys', 'access_token_secret')
 # setting auth from config
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
-
 
 # constructing our own listener class
 class MyStreamListener(tweepy.StreamListener):
