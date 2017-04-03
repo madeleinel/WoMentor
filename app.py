@@ -39,13 +39,9 @@ def showMentorSignup():
 # to show a list of mentors, temporary placement just so i can test stuff
 @app.route("/mentors")
 def showMentorList():
-    mentor = db.session.query(User).filter_by(mentor_mentee="mentor").first()
-    print mentor.uid
-    print mentor.scrn_name
-    # mentordict = [{ "twitter": "fluffyunicorn", "languages": "javascript", "offer": "gestting started" }, { "twitter": "sallyjane", "languages": "haskell", "offer": "career advice"}]
+    mentordict = [{ "twitterhandle": "fluffyunicorn", "languages": "javascript, python, ruby", "skills": "tight-rope walking, laughter", "offers": "getting started, happy unicorns", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" }, { "twitterhandle": "madeilenel", "languages": "javascript, python", "offers": "getting started, fika", "skills": "tea breaking, cartwheels", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" }]
     # TO DO: adapt this to work with multiple offers/languages/etc by making a string out of them
-    return render_template("mentorlist.html", nomentors=True)
-    # False, mentorlist=mentordict)
+    return render_template("mentorlist.html", nomentors=False, mentorlist=mentordict)
 
 if __name__ == "__main__":
     app.run()
