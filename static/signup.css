@@ -4,14 +4,14 @@ body {
   overflow: scroll;
 }
 
-#mainOne h3 {
-  text-shadow: 0 0 8px #333;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
+#mainThree h3 {
+  text-shadow: none;ß
 }
 
-.btn_tweetUs h3 {
+/*.btn_tweetUs h3 {
   margin-top: 2.8rem;
   text-shadow: 1px 2px 2px black;
-}
+}*/
 
 #mainThree h3 {
   color: black;
@@ -37,8 +37,12 @@ main {
   -ms-flex-direction: column;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   padding-bottom: 24vh;
+}
+
+.rectangle {
+  min-height: 16vh;
+  margin: 4vh 0;
 }
 
 #mainOne {

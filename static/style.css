@@ -10,7 +10,7 @@ body {
   padding: 0;
   font-family: 'Lato', sans-serif;
   background-color: #9290AA;
-  height: 100vh;
+  text-align: center;
 }
 
 h1 {
@@ -42,6 +42,7 @@ h3 {
   font-size: 2rem;
   color: white;
   padding: 1rem 0;
+  text-shadow: 0 0 8px #333;
 }
 
 h4 {
@@ -100,19 +101,15 @@ main {
   border-radius: 50%;
   background-color: white;
   margin: 1rem;
-
-  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
-  box-shadow: 0 0 20px #5B5980;
+  box-shadow: 0 0 20px #5B5980;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
 }
 
 .rectangle {
-  background-color: white;
   width: 50vw;
-  min-height: 16vh;
-  margin: 4vh 0;
+  border-radius: 2rem;
+  background-color: white;
   padding: 3rem;
   box-shadow: 0 0 20px #5B5980;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
-  border-radius: 2rem;
 
   /* Shape of right-pointing arrows */
   /*-webkit-clip-path: polygon(92% 0, 100% 50%, 92% 100%, 0% 100%, 8% 50%, 0% 0%);

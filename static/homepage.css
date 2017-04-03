@@ -2,6 +2,7 @@
 
 body {
   overflow: hidden; /* To disable on smaller screens */
+  height: 100vh;
 }
 
 .btn {
