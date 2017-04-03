@@ -24,6 +24,10 @@ h3 {
   padding: 1rem 0;
 }
 
+h2, #mainOne h3 {
+  text-shadow: 0 0 8px #333;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
+}
+
 .btn_tweetUs h3 {
   margin-top: 2.8rem;
   text-shadow: 1px 2px 2px black;
