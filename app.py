@@ -6,16 +6,15 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 # config importing
-# config = ConfigParser.ConfigParser()
-# config.readfp(open('dbcnnct.cfg'))
-# username = config.get('PostgresDB', 'user')
-# password = config.get('PostgresDB', 'password')
-# portnum = config.get('PostgresDB', 'port')
-# dbname = config.get('PostgresDB', 'dbname')
+config = ConfigParser.ConfigParser()
+config.readfp(open('dbcnnct.cfg'))
+username = config.get('PostgresDB', 'user')
+password = config.get('PostgresDB', 'password')
+portnum = config.get('PostgresDB', 'port')
+dbname = config.get('PostgresDB', 'dbname')
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://{}:{}@{}/{}'.format(username, password, portnum, dbname)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://{}:{}@{}/{}'.format(username, password, portnum, dbname)
 db.init_app(app)
 
 def create_app():
@@ -40,13 +39,37 @@ def showMentorSignup():
 # to show a list of mentors, temporary placement just so i can test stuff
 @app.route("/mentors")
 def showMentorList():
-    mentor = db.session.query(User).filter_by(mentor_mentee="mentor").first()
-    print mentor.uid
-    print mentor.scrn_name
+    # mentor = db.session.query(User).filter_by(mentor_mentee="mentor").first()
+    # print mentor.uid
+    # print mentor.scrn_name
+    mentor_list = []
+    allMentors = db.session.query(User).filter_by(mentor_mentee="mentor").all()
+    for mentor in allMentors:
+        mentordict = {}
+        mentordict['twitterhandle'] = mentor.scrn_name
+        print mentor.scrn_name
+        for offer in mentor.offer:
+            print offer
+        for skill in mentor.skills:
+            print skill
+        for lang in mentor.languages:
+            print lang
     # mentordict = [{ "twitter": "fluffyunicorn", "languages": "javascript", "offer": "gestting started" }, { "twitter": "sallyjane", "languages": "haskell", "offer": "career advice"}]
     # TO DO: adapt this to work with multiple offers/languages/etc by making a string out of them
     return render_template("mentorlist.html", nomentors=True)
     # False, mentorlist=mentordict)
+
+def checkListItems(list,checkTerm,final_list):
+    for item in list:
+        if item != 'None' and item != checkTerm:
+            final_list.append(item)
+    return final_list
+
+def makeString(list):
+  str = ", ".join(list)
+  idx = str.rfind(',')
+  str = str[:idx] + " and " + str[idx+2:]
+  return str
 
 if __name__ == "__main__":
     app.run()
