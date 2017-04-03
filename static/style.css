@@ -59,6 +59,9 @@ main {
   justify-content: center;
   background-size: cover;
   background-position: center;
+
+  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
+  box-shadow: 0 0 10px #5B5980;
 }
 
 a .signup {

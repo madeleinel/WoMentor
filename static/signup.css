@@ -112,18 +112,25 @@ main {
   border-radius: 50%;
   background-color: white;
   margin: 1rem;
+
+  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
+  box-shadow: 0 0 20px #5B5980;
 }
 
 .rectangle {
   background-color: white;
   width: 50vw;
   min-height: 16vh;
-  margin: 1rem;
+  margin: 4vh 0;
   padding: 3rem;
+  box-shadow: 0 0 20px #5B5980;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
+  border-radius: 2rem;
 
-  -webkit-clip-path: polygon(92% 0, 100% 50%, 92% 100%, 0% 100%, 8% 50%, 0% 0%);
-  clip-path: polygon(92% 0, 100% 50%, 92% 100%, 0% 100%, 8% 50%, 0% 0%);
+  /* Shape of right-pointing arrows */
+  /*-webkit-clip-path: polygon(92% 0, 100% 50%, 92% 100%, 0% 100%, 8% 50%, 0% 0%);
+  clip-path: polygon(92% 0, 100% 50%, 92% 100%, 0% 100%, 8% 50%, 0% 0%);*/
 
+  /* Shape of rectangles with cut-off corners */
   /*-webkit-clip-path: polygon(8% 0, 92% 0, 100% 20%, 100% 80%, 92% 100%, 8% 100%, 0% 80%, 0% 20%);
   clip-path: polygon(8% 0, 92% 0, 100% 20%, 100% 80%, 92% 100%, 8% 100%, 0% 80%, 0% 20%);*/
 }
@@ -131,8 +138,10 @@ main {
 .tweet img {
   width: 45vw;
   border-radius: 0.5rem;
-  /*margin: 12vh 0;*/
   margin: 4vh 0;
+
+  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
+  box-shadow: 0 0 20px #5B5980;
 }
 
 .btn_tweetUs {
