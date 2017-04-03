@@ -4,17 +4,10 @@ from flask import Flask, render_template
 from flask_data_models import User, Offer, Languages, Skills
 from flask_sqlalchemy import SQLAlchemy
 
-
-# config importing
-config = ConfigParser.ConfigParser()
-config.readfp(open('dbcnnct.cfg'))
-username = config.get('PostgresDB', 'user')
-password = config.get('PostgresDB', 'password')
-portnum = config.get('PostgresDB', 'port')
-dbname = config.get('PostgresDB', 'dbname')
-
+a_test_var = os.environ['test_var']
+print(a_test_var)
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://{}:{}@{}/{}'.format(username, password, portnum, dbname)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 db.init_app(app)
 
 def create_app():
