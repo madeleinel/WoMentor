@@ -39,14 +39,18 @@
     <div class="mentor">
       <div class="profile-inf">
         <svg class="mentor-icon" xmlns="http://www.w3.org/2000.svg">
+          {% if loop.index is divisibleby 2 %}
           <use fill="url(#radialGradient-1)" xlink:href="#mentor"></use>
+          {% else %}
+          <use fill="url(#radialGradient-2)" xlink:href="#mentor"></use>
+          {% endif %}
         </svg>
         <p class="main-div-title">@{{ mentor.twitterhandle }}</p>
       </div>
       <div class="db-list">
-        <p>{{ mentor.languages }}</p>
-        <p>{{ mentor.skills }}</p>
-        <p>{{ mentor.offers }}</p>
+        <p>Languages: {{ mentor.languages }}</p>
+        <p>Skills: {{ mentor.skills }}</p>
+        <p>Offering: {{ mentor.offers }}</p>
         <div class="link-box">
           <a href={{ mentor.originaltweet }} alt="original tweet"><i class="fa fa-link" aria-hidden="true"></i> original tweet</a>
           <br>
