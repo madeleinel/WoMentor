@@ -12,7 +12,7 @@ class User(db.Model):
     languages = db.relationship('Languages', backref='polyglot', lazy='dynamic')
 
     def __repr__(self):
-        return "<User(uid={}, scrn_name={}, offer={}, langs={}, skills={}, originaltweet={}, twitteruid={})>".format(self.uid, self.scrn_name, self.offer, self.languages, self.skills, self.original_tweet_id, self.twitter_uid)
+        return "{};{};{};{};{};{};{}".format(self.uid, self.scrn_name, self.original_tweet_id, self.twitter_uid, self.offer, self.languages, self.skills)
 
 class Offer(db.Model):
     oid = db.Column(db.Integer, primary_key=True)
@@ -22,7 +22,7 @@ class Offer(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.uid'))
 
     def __repr__(self):
-        return "Offer 1: {}, 2: {}, 3: {}".format(self.offer_1, self.offer_2, self.offer_3)
+        return "Offer,{},{},{}".format(self.offer_1, self.offer_2, self.offer_3)
 
 class Skills(db.Model):
     oid = db.Column(db.Integer, primary_key=True)
@@ -33,7 +33,7 @@ class Skills(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.uid'))
 
     def __repr__(self):
-        return "Skills 1: {}, 2: {}, 3: {}, 4: {}".format(self.skills_1, self.skills_2, self.skills_3, self.skills_4)
+        return "Skills,{},{},{},{}".format(self.skills_1, self.skills_2, self.skills_3, self.skills_4)
 
 class Languages(db.Model):
     oid = db.Column(db.Integer, primary_key=True)
@@ -44,4 +44,4 @@ class Languages(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.uid'))
 
     def __repr__(self):
-        return "Languages 1: {}, 2: {}, 3: {}, 4: {}".format(self.languages_1, self.languages_2, self.languages_3, self.languages_4)
+        return "Languages,{},{},{},{}".format(self.languages_1, self.languages_2, self.languages_3, self.languages_4)
