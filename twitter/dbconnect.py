@@ -3,7 +3,10 @@ from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm.session import sessionmaker
 
-engine = create_engine('postgresql://admin:w0m3nrul3@localhost:5432/womentors')
+
+dbURL = os.environ['DATABASE_URL']
+engine = create_engine(dbURL)
+# engine = create_engine('postgresql://admin:w0m3nrul3@localhost:5432/womentors')
 
 Session = sessionmaker(bind=engine)
 session = Session()
