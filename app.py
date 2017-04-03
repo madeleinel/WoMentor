@@ -69,6 +69,7 @@ def makeString(list):
   str = ", ".join(list)
   idx = str.rfind(',')
   str = str[:idx] + " and " + str[idx+2:]
+  # Case of 'and more' still needs considering !!!!!
   return str
 
 if __name__ == "__main__":
