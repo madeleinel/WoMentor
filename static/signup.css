@@ -1,30 +1,10 @@
-* {
-  /*border: 1px solid blue;*/
-}
+/* Defining the specific structure and styling of the sign-up pages */
 
 body {
   overflow: scroll;
 }
 
-h2 {
-  font-family: 'Macondo', cursive;
-  font-size: 4rem;
-  color: white;
-  padding: 2rem;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  justify-content: center;
-}
-
-h3 {
-  font-family: 'Macondo', cursive;
-  font-size: 2rem;
-  color: white;
-  padding: 1rem 0;
-}
-
-h2, #mainOne h3 {
+#mainOne h3 {
   text-shadow: 0 0 8px #333;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
 }
 
@@ -37,10 +17,6 @@ h2, #mainOne h3 {
   color: black;
 }
 
-h4 {
-  font-size: 1rem;
-}
-
 .circle h4 {
   margin-top: 4rem;
   margin-bottom: 1.5rem;
@@ -50,19 +26,10 @@ h4 {
   margin-bottom: 1.5rem;
 }
 
-p {
-  padding: 0 1.5rem;
-  line-height: 1.4rem;
-}
-
 header a {
   text-decoration: underline;
   color: white;
   margin-left: 1rem;
-}
-
-header {
-  /*height: 6rem;*/
 }
 
 main {
@@ -89,75 +56,18 @@ main {
   padding: 12vh;
 }
 
-.row {
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  justify-content: center;
-}
-
-.column {
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.circle {
-  height: 14rem;
-  width: 14rem;
-  border-radius: 50%;
-  background-color: white;
-  margin: 1rem;
-
-  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
-  box-shadow: 0 0 20px #5B5980;
-}
-
-.rectangle {
-  background-color: white;
-  width: 50vw;
-  min-height: 16vh;
-  margin: 4vh 0;
-  padding: 3rem;
-  box-shadow: 0 0 20px #5B5980;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
-  border-radius: 2rem;
-
-  /* Shape of right-pointing arrows */
-  /*-webkit-clip-path: polygon(92% 0, 100% 50%, 92% 100%, 0% 100%, 8% 50%, 0% 0%);
-  clip-path: polygon(92% 0, 100% 50%, 92% 100%, 0% 100%, 8% 50%, 0% 0%);*/
-
-  /* Shape of rectangles with cut-off corners */
-  /*-webkit-clip-path: polygon(8% 0, 92% 0, 100% 20%, 100% 80%, 92% 100%, 8% 100%, 0% 80%, 0% 20%);
-  clip-path: polygon(8% 0, 92% 0, 100% 20%, 100% 80%, 92% 100%, 8% 100%, 0% 80%, 0% 20%);*/
-}
-
 .tweet img {
   width: 45vw;
   border-radius: 0.5rem;
   margin: 4vh 0;
-
-  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
-  box-shadow: 0 0 20px #5B5980;
+  box-shadow: 0 0 20px #5B5980;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
 }
 
 .btn_tweetUs {
-  /*padding: 2rem;*/
   background-image: url("../static/images/tweetUs_placeholder.jpeg");
   background-size: cover;
   background-position: center;
   height: 14rem;
   width: 14rem;
   border-radius: 50%;
-}
-
-footer {
-  position: relative;
 }
