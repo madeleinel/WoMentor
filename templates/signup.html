@@ -12,7 +12,11 @@
   </head>
   <body>
     <header>
-      <h2>All you need to do is <a href="http://twitter.com/home?status=%23WomenToTech%20%23mentor%20-langs%3A%20-skills%3A%20-mentor%3A%20" target="_blank">tweet us!</a></h2>
+      {% if request.url_rule|string == url_for('showMentorSignup')|string %}
+        <h2>All you need to do is <a href="http://twitter.com/home?status=%23WomenToTech%20%23Mentor%20-langs%3A%20-skills%3A%20-offer%3A%20" target="_blank">tweet us!</a></h2>
+      {% elif request.url_rule|string == url_for('showMenteeSignup')|string %}
+        <h2>All you need to do is <a href="http://twitter.com/home?status=%23WomenToTech%20%23Mentee%20-langs%3A%20-skills%3A%20-seek%3A%20" target="_blank">tweet us!</a></h2>
+      {% endif %}
     </header>
     <main id="mainOne">
       <div class="row">
