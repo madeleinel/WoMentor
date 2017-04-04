@@ -1,5 +1,6 @@
+/* Defining the base structure and styling of the page */
+
 * {
-  /*border: 1px solid red;*/
   margin: 0;
   padding: 0;
 }
@@ -7,10 +8,55 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   background-color: #9290AA;
-  height: 100vh;
-  overflow: hidden; /* To disable on smaller screens */
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: 'Oleo Script', cursive;
+  color: white;
+}
+
+h1 {
+  font-size: 8rem;
+  padding: 4vh;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  text-shadow: 0 0 10px #333;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
+}
+
+h2 {
+  font-size: 5rem;
+  padding: 2rem;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  text-shadow: 0 0 8px #333;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
+}
+
+h3 {
+  font-size: 3rem;
+  padding: 1rem 0;
+  text-shadow: 0 0 8px #333;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+.black {  /* targetting headers with the class .black */
+  color: black;
+  text-shadow: none;
+}
+
+p {
+  font-size: 1.2rem;
+  padding: 0 1.5rem;
+  line-height: 1.4rem;
 }
 
 a {
@@ -20,17 +66,6 @@ a {
 header {
   /*background-color: #5B5980;*/
   height: 22vh;
-}
-
-h1 {
-  font-family: 'Macondo', cursive;
-  font-size: 6rem;
-  color: white;
-  padding: 4vh;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  justify-content: center;
 }
 
 main {
@@ -44,48 +79,77 @@ main {
   justify-content: space-around;
 }
 
-.btn {
-  /*height: 400px;
-  width: 400px;*/
-
-  height: 25rem;
-  width: 25rem;
-  border-radius: 50%;
-  margin-top: 8vh;
+.row {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  background-size: cover;
-  background-position: center;
 }
 
-a .signup {
-  font-family: 'Macondo', cursive;
-  font-size: 2rem;
-  color: white;
+.column {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
 }
 
-#menteeSignup {
-  background-image: url("../static/images/mentee_signup.jpeg");
+.circle {
+  height: 14rem;
+  width: 14rem;
+  border-radius: 50%;
+  background-color: white;
+  margin: 1rem;
+  box-shadow: 0 0 20px #5B5980;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
 }
 
-#mentorSignup {
-  background-image: url("../static/images/mentor_signup.jpeg");
+.rectangle {
+  width: 50vw;
+  border-radius: 2rem;
+  background-color: white;
+  padding: 3rem;
+  box-shadow: 0 0 20px #5B5980;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
+
+  /* Shape of right-pointing arrows */
+  /*-webkit-clip-path: polygon(92% 0, 100% 50%, 92% 100%, 0% 100%, 8% 50%, 0% 0%);
+  clip-path: polygon(92% 0, 100% 50%, 92% 100%, 0% 100%, 8% 50%, 0% 0%);*/
+
+  /* Shape of rectangles with cut-off corners */
+  /*-webkit-clip-path: polygon(8% 0, 92% 0, 100% 20%, 100% 80%, 92% 100%, 8% 100%, 0% 80%, 0% 20%);
+  clip-path: polygon(8% 0, 92% 0, 100% 20%, 100% 80%, 92% 100%, 8% 100%, 0% 80%, 0% 20%);*/
 }
 
 footer {
   height: 4vh;
   width: 100vw;
-  position: fixed;
-  bottom: 0;
-  /*background-color: #5B5980;*/
+  position: relative;
   color: white;
-  font-family: 'Lato', sans-serif;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.homeLink {
+  position: fixed;
+  top: 2vh;
+  left: 1vw;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  background-color: #5B5980;
+  background-image: url("../static/images/mentee_signup.jpeg");
+  background-position: top;
+  box-shadow: 0 0 4px #5B5980;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
+}
+
+.homeLink h3 {
+  margin-right: 0.4rem;
 }

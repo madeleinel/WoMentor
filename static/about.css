@@ -1,0 +1,32 @@
+/* Defining the specific structure and styling of the about page */
+
+body {
+  overflow: hidden; /* To disable on smaller screens */
+  height: 100vh;
+}
+
+p {
+  line-height: 2.4rem;
+  font-size: 1.4rem;
+}
+
+p a {
+  color: black;
+  text-decoration: underline;
+}
+
+span {
+  font-size: 1.8rem;
+  margin-right: 1.4rem;
+}
+
+.rectangle {
+  width: 60vw;
+  margin: 4vh 0;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background-color: #5B5980;
+}
