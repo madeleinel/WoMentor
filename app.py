@@ -47,13 +47,11 @@ def showMentorList():
     for mentor in allMentors:
         mentordict = {}
         mentordict['twitterhandle'] = mentor.scrn_name
-        print mentor.scrn_name
-        for offer in mentor.offer:
-            print offer
-        for skill in mentor.skills:
-            print skill
-        for lang in mentor.languages:
-            print lang
+        mentordict['user_id'] = "https://twitter.com/intent/user?user_id=" + mentor.twitter_uid
+        mentordict['originaltweet'] = "http://twitter.com/anyuser/status/" + mentor.original_tweet_id
+        languagelist = mentor.languages
+        for langObj in languagelist:
+            print langObj.languages_1
     # mentordict = [{ "twitter": "fluffyunicorn", "languages": "javascript", "offer": "gestting started" }, { "twitter": "sallyjane", "languages": "haskell", "offer": "career advice"}]
     # TO DO: adapt this to work with multiple offers/languages/etc by making a string out of them
     return render_template("mentorlist.html", nomentors=True)
@@ -73,4 +71,4 @@ def makeString(list):
   return str
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
