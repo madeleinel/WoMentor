@@ -68,14 +68,15 @@ main {
 }
 
 .tweetUs {
-  background-size: cover;
-  background-position: center;
+  /*background-size: cover;*/
+  background-position: top;
+  background-image: url("../static/images/mentee_signup.jpeg");
 }
 
-#mentorTweet {
+/*#mentorTweet {
   background-image: url("../static/images/mentor_signup.jpeg");
 }
 
 #menteeTweet {
   background-image: url("../static/images/mentee_signup.jpeg");
-}
+}*/
