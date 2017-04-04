@@ -8,15 +8,18 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   background-color: #9290AA;
   text-align: center;
 }
 
-h1 {
-  font-family: 'Macondo', cursive;
-  font-size: 6rem;
+h1, h2, h3 {
+  font-family: 'Oleo Script', cursive;
   color: white;
+}
+
+h1 {
+  font-size: 8rem;
   padding: 4vh;
   display: -webkit-flex;
   display: -ms-flex;
@@ -26,9 +29,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Macondo', cursive;
-  font-size: 4rem;
-  color: white;
+  font-size: 5rem;
   padding: 2rem;
   display: -webkit-flex;
   display: -ms-flex;
@@ -38,18 +39,17 @@ h2 {
 }
 
 h3 {
-  font-family: 'Macondo', cursive;
-  font-size: 2rem;
-  color: white;
+  font-size: 3rem;
   padding: 1rem 0;
   text-shadow: 0 0 8px #333;
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 p {
+  font-size: 1.2rem;
   padding: 0 1.5rem;
   line-height: 1.4rem;
 }
@@ -82,7 +82,6 @@ main {
   -ms-flex-direction: row;
   flex-direction: row;
   flex-wrap: wrap;
-
   justify-content: center;
 }
 
@@ -125,7 +124,6 @@ footer {
   width: 100vw;
   position: relative;
   color: white;
-  font-family: 'Lato', sans-serif;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;

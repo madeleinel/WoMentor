@@ -21,9 +21,10 @@ body {
 }
 
 a .signup {
-  font-family: 'Macondo', cursive;
-  font-size: 2rem;
+  font-family: 'Oleo Script', cursive;
+  font-size: 3rem;
   color: white;
+  text-shadow: 0 0 10px #333;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
 }
 
 #menteeSignup {

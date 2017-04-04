@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="static/style.css" type="text/css">
     <link rel="stylesheet" href="static/signup.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Macondo|Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Oleo+Script" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -43,9 +43,9 @@
         <div class="column circle">
           <h4>-langs:</h4>
           {% if request.url_rule|string == url_for('showMentorSignup')|string %}
-            <p>Let us know the languages you know</p>
+            <p>Let us know which languages you know</p>
           {% elif request.url_rule|string == url_for('showMenteeSignup')|string %}
-            <p>Let us know the languages you know or are learning</p>
+            <p>Let us know which languages you know or are learning</p>
           {% endif %}
         </div>
         <div class="column circle">
@@ -66,15 +66,9 @@
           {% endif %}
         </div>
       </div>
-
     </main>
 
     <main id="mainTwo">
-
-      <!-- <a href="http://twitter.com/home?status=%23WomenToTech%20%23mentor%20-langs%3A%20-skills%3A%20-mentor%3A%20" target="_blank" class="column circle btn_tweetUs">
-        <h3 class="tweetUs">Click here to tweet us now!</h3>
-      </a> -->
-
       <div class="column">
         {% if request.url_rule|string == url_for('showMentorSignup')|string %}
           <div class="tweet">
@@ -98,11 +92,10 @@
           </div>
         {% endif %}
       </div>
-
     </main>
-    <main id="mainThree">
 
-      <h3>To consider before tweeting:</h3>
+    <main id="mainThree">
+      <h3 class="black">To consider before tweeting:</h3>
       <div class="column rectangle">
         {% if request.url_rule|string == url_for('showMentorSignup')|string %}
           <h4>What you can -offer could include:</h4>
@@ -140,6 +133,15 @@
         <h4>Split your tweets</h4>
         <p>If you have a lot to say, you can split your content into two tweets.<br/>Just make sure you end them with "x/2".</p>
       </div>
+
+      {% if request.url_rule|string == url_for('showMentorSignup')|string %}
+        <a href="http://twitter.com/home?status=%23WomenToTech%20%23Mentor%20-langs%3A%20-skills%3A%20-offer%3A%20" target="_blank" class="column circle tweetUs" id="mentorTweet">
+      {% elif request.url_rule|string == url_for('showMenteeSignup')|string %}
+        <a href="http://twitter.com/home?status=%23WomenToTech%20%23Mentee%20-langs%3A%20-skills%3A%20-seek%3A%20" target="_blank" class="column circle tweetUs" id="menteeTweet">
+      {% endif %}
+          <h3>Click here to<br/>tweet us now!</h3>
+        </a>
+
     </main>
     <footer>
       Created by Eleanor Keane and Madeleine Linder
