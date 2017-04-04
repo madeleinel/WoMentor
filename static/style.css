@@ -136,3 +136,18 @@ footer {
   align-items: center;
   justify-content: center;
 }
+
+.homeLink {
+  position: fixed;
+  top: 2vh;
+  left: 1vw;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  background-color: #5B5980;
+  box-shadow: 0 0 4px #5B5980;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
+}
+
+.homeLink h3 {
+  margin-right: 0.4rem;
+}
