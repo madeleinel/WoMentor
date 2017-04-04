@@ -1,20 +1,43 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Mentor List</title>
-</head>
-<body>
-  {% if nomentors == True %}
-    <h2>We don't have any mentors at this time, Sorry!! Check back later and follow our twitterbot for updates!</h2>
-  {% else %}
-  <ul>
-    {% for mentor in mentorlist %}
-      <li>Mentor {{ [loop.index] }}: {{ mentor.twitter }}, knows {{ mentor.languages }} and can offer help with {{ mentor.offer }}!</li>
-    {% endfor %}
-  </ul>
-  {% endif %}
-</body>
+  <head>
+    <title>WomenToTech</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="static/style.css" type="text/css">
+    <link rel="stylesheet" href="static/list.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Oleo+Script" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h2>Mentor profiles</h2>
+      <div class="homeLink"><a href="/"><h3>WtT</h3></a></div>
+    </header>
+    <main>
+      <!-- if no mentors then... -->
+        <h3>We don't have any registered mentors at this time.<br/>Check back later and follow our Twitter bot for updates!</h3>
+      <!-- otherwise... -->
+
+      <div class="column">
+
+        <div class="row profile">
+          <div class="column photo">
+            image...
+          </div>
+          <div class="column info">
+            <p>Languages: languages...</p>
+            <p>Skills: skills...</p>
+            <p>Offering: offering...</p>
+          </div>
+          <div class="column contact">
+            contact info...
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+  </body>
 </html>
