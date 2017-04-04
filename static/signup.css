@@ -4,11 +4,6 @@ body {
   overflow: scroll;
 }
 
-.black {  /* targetting headers with the class .black */
-  color: black;
-  text-shadow: none;
-}
-
 .tweetUs h3 {
   font-size: 2rem;
   margin-top: 3.4rem;

@@ -11,8 +11,7 @@ h3 {
 
 p {
   line-height: 2.4rem;
-  font-size: 1rem;
-  /*text-align: left;*/
+  font-size: 1.4rem;
 }
 
 p a {
@@ -26,9 +25,8 @@ span {
 }
 
 .rectangle {
-  /*min-height: 30vh;*/
-  /*width: 60vw;*/
-  margin: 6vh 0;
+  width: 60vw;
+  margin: 4vh 0;
 }
 
 footer {
