@@ -1,3 +1,43 @@
 * {
-  border: 1px solid purple;
+  /*border: 1px solid purple;*/
+}
+
+.profile {
+  width: 60vw;
+  box-shadow: 0 0 20px #5B5980;
+  margin: 4vh 0;
+}
+
+.photo {
+  width: 30%;
+
+  background-color: orange;
+}
+
+.content {
+  width: 70%;
+  text-align: left;
+
+  background-color: yellow;
+}
+
+.info {
+
+}
+
+.contact {
+
+}
+
+svg {
+  margin: 0 auto;
+  padding: 0;
+  /*display: block;*/
+  max-width: 100%;
+}
+
+.twitbird {
+  max-width: 1rem;
+  max-height: 1rem;
+  /*display: inline;*/
 }
