@@ -35,6 +35,12 @@ a .signup {
   background-image: url("../static/images/mentor_signup.jpeg");
 }
 
+#aboutLink {
+  position: fixed;
+  bottom: 2vh;
+  left: 44vw;
+}
+
 footer {
   position: fixed;
   bottom: 0;
