@@ -1,7 +1,7 @@
 import ConfigParser
 from cordb import db
 from flask import Flask, render_template
-from flask_data_models import User, Offer, Languages, Skills
+from flask_data_models import User, Language, Skill, Offer
 from flask_sqlalchemy import SQLAlchemy
 
 

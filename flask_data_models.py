@@ -1,47 +1,48 @@
 from flask_sqlalchemy import SQLAlchemy
 from cordb import db
 
+map_table = db.Table('user_language_map_table',
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('language_id', db.Integer, db.ForeignKey('language.id'))
+)
+
+map_table = db.Table('user_skill_map_table',
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('skill_id', db.Integer, db.ForeignKey('skill.id'))
+)
+
+map_table = db.Table('user_offer_map_table',
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('offer_id', db.Integer, db.ForeignKey('offer.id'))
+)
+
 class User(db.Model):
-    uid = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, db.Sequence('user_id_seq'), primary_key=True)
     mentor_mentee = db.Column(db.String(100), nullable=False)
     twitter_uid = db.Column(db.String(100), nullable=False)
     original_tweet_id = db.Column(db.String(100), nullable=False)
     scrn_name = db.Column(db.String(20), nullable=False)
-    offer = db.relationship('Offer', backref='useroffer', lazy='dynamic')
-    skills = db.relationship('Skills', backref='skillset', lazy='dynamic')
-    languages = db.relationship('Languages', backref='polyglot', lazy='dynamic')
+    languages = db.relationship('Language', secondary=map_table, backref='users')
+    skills = db.relationship('Skill', secondary=map_table, backref='users')
+    offers = db.relationship('Offer', secondary=map_table, backref='users')
 
-    def __repr__(self):
-        return "{};{};{};{};{};{};{}".format(self.uid, self.scrn_name, self.original_tweet_id, self.twitter_uid, self.offer, self.languages, self.skills)
+class Language(db.Model):
+    id = db.Column(db.Integer, db.Sequence('language_id_seq'), primary_key=True)
+    language = db.Column(db.String(100), nullable=False)
+    __table_args__ = (
+        db.UniqueConstraint('language'),
+    )
+
+class Skill(db.Model):
+    id = db.Column(db.Integer, db.Sequence('skill_id_seq'), primary_key=True)
+    skill = db.Column(db.String(100), nullable=False)
+    __table_args__ = (
+        db.UniqueConstraint('skill'),
+    )
 
 class Offer(db.Model):
-    oid = db.Column(db.Integer, primary_key=True)
-    offer_1 = db.Column(db.String(100))
-    offer_2 = db.Column(db.String(100))
-    offer_3 = db.Column(db.String(100))
-    user_id = db.Column(db.Integer, db.ForeignKey('user.uid'))
-
-    def __repr__(self):
-        return "Offer,{},{},{}".format(self.offer_1, self.offer_2, self.offer_3)
-
-class Skills(db.Model):
-    oid = db.Column(db.Integer, primary_key=True)
-    skills_1 = db.Column(db.String(100))
-    skills_2 = db.Column(db.String(100))
-    skills_3 = db.Column(db.String(100))
-    skills_4 = db.Column(db.String(100))
-    user_id = db.Column(db.Integer, db.ForeignKey('user.uid'))
-
-    def __repr__(self):
-        return "Skills,{},{},{},{}".format(self.skills_1, self.skills_2, self.skills_3, self.skills_4)
-
-class Languages(db.Model):
-    oid = db.Column(db.Integer, primary_key=True)
-    languages_1 = db.Column(db.String(100))
-    languages_2 = db.Column(db.String(100))
-    languages_3 = db.Column(db.String(100))
-    languages_4 = db.Column(db.String(100))
-    user_id = db.Column(db.Integer, db.ForeignKey('user.uid'))
-
-    def __repr__(self):
-        return "Languages,{},{},{},{}".format(self.languages_1, self.languages_2, self.languages_3, self.languages_4)
+    id = db.Column(db.Integer, db.Sequence('offer_id_seq'), primary_key=True)
+    offer = db.Column(db.String(100), nullable=False)
+    __table_args__ = (
+        db.UniqueConstraint('offer'),
+    )
