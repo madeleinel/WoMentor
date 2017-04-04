@@ -30,9 +30,13 @@
 
         {% for mentor in mentorlist %}
         <div class="row profile">
-          <div class="column photo">
-            image...
-            <p class="main-div-title">@{{ mentor.twitterhandle }}</p>
+          <div class="column graphics">
+            <div class="photo">
+              <img src="../static/images/tweetUs_placeholder.jpeg">
+            </div>
+            <div class="twitterHandle">
+              <p class="main-div-title">@{{ mentor.twitterhandle }}</p>
+            </div>
           </div>
           <div class="column content">
             <div class="info">
@@ -41,13 +45,16 @@
               <p>Offering: {{ mentor.offers }}</p>
             </div>
             <div class="contact">
-              <a href={{ mentor.originaltweet }} alt="original tweet"><i class="fa fa-link" aria-hidden="true"></i> original tweet</a>
+              <a href={{ mentor.originaltweet }} alt="original tweet">original tweet</a>
+                <!-- <i class="fa fa-link" aria-hidden="true"></i> original tweet</a> -->
               <br>
               <a href={{ mentor.twitterprofile}} alt="twitter profile">
+                <!-- twitter profile -->
                 <svg xmlns="http://www.w3.org/2000.svg" class="twitbird">
                   <use xlink:href="#twitter-bird"></use>
                 </svg>
-                <span>twitter</span>
+                twitter profile
+                <!-- <span>twitter</span> -->
               </a>
             </div>
           </div>
@@ -57,7 +64,8 @@
       </div>
       {% endif %}
     </main>
-
-
+    <footer>
+      Created by Eleanor Keane and Madeleine Linder
+    </footer>
   </body>
 </html>

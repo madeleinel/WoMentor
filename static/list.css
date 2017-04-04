@@ -2,31 +2,48 @@
   /*border: 1px solid purple;*/
 }
 
+.content p {
+  padding: 0.5rem;
+  margin: 1rem 0 0 2rem;
+}
+
+.contact a {
+  color: black;
+  margin-right: 2rem;
+}
+
 .profile {
   width: 60vw;
+  min-height: 20vh;
   box-shadow: 0 0 20px #5B5980;
   margin: 4vh 0;
 }
 
-.photo {
-  width: 30%;
+.graphics {
+  width: 25%;
+  background-color: #ADACC0;
+}
 
-  background-color: orange;
+.photo img {
+  width: 100%;
+  height: auto;
 }
 
 .content {
-  width: 70%;
-  text-align: left;
-
-  background-color: yellow;
+  width: 75%;
+  background-color: white;
 }
 
 .info {
-
+  width: 100%;
+  text-align: left;
+  /*background-color: yellow;*/
 }
 
 .contact {
-
+  width: 100%;
+  text-align: right;
+  /*background-color: orange;*/
 }
 
 svg {
@@ -37,7 +54,11 @@ svg {
 }
 
 .twitbird {
-  max-width: 1rem;
-  max-height: 1rem;
+  max-width: 1.2rem;
+  max-height: 1.2rem;
   /*display: inline;*/
+}
+
+footer {
+  background-color: #5B5980;
 }
