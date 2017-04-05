@@ -49,19 +49,74 @@ def showMentorList():
         mentordict['twitterhandle'] = mentor.scrn_name
         mentordict['user_id'] = "https://twitter.com/intent/user?user_id=" + mentor.twitter_uid
         mentordict['originaltweet'] = "http://twitter.com/anyuser/status/" + mentor.original_tweet_id
-        languagelist = mentor.languages
-        for langObj in languagelist:
-            print langObj.languages_1
-    # mentordict = [{ "twitter": "fluffyunicorn", "languages": "javascript", "offer": "gestting started" }, { "twitter": "sallyjane", "languages": "haskell", "offer": "career advice"}]
-    # TO DO: adapt this to work with multiple offers/languages/etc by making a string out of them
-    return render_template("mentorlist.html", nomentors=True)
-    # False, mentorlist=mentordict)
+        languageList = []
+        languageString = "Languages: "
+        languageObjList = mentor.languages
+        for langObj in languageObjList:
+            languageList.append(checkIsntNone(langObj.languages_1))
+            languageList.append(checkIsntNone(langObj.languages_2))
+            languageList.append(checkIsntNone(langObj.languages_3))
+            languageList.append(checkIsntNone(langObj.languages_4))
+        languageList = checkListItems(languageList, [])
+        languageString = makeNormalString(languageList, languageString)
+        mentordict['languages'] = languageString
+        skillList = []
+        skillString = "Skills: "
+        skillObjList = mentor.skills
+        for langObj in skillObjList:
+            skillList.append(checkIsntNone(langObj.skills_1))
+            skillList.append(checkIsntNone(langObj.skills_2))
+            skillList.append(checkIsntNone(langObj.skills_3))
+            skillList.append(checkIsntNone(langObj.skills_4))
+        skillList = checkListItems(skillList, [])
+        skillString = makeNormalString(skillList, skillString)
+        mentordict['skills'] = skillString
+        offerList = []
+        offerString = "Offers: "
+        offerObjList = mentor.offer
+        for langObj in offerObjList:
+            offerList.append(checkIsntNone(langObj.offer_1))
+            offerList.append(checkIsntNone(langObj.offer_2))
+            offerList.append(checkIsntNone(langObj.offer_3))
+        offerList = checkListItems(offerList, [])
+        offerString = makeNormalString(offerList, offerString)
+        mentordict['offer'] = offerString
+        mentor_list.append(mentordict)
+    if len(mentor_list) > 0:
+        return render_template("mentorlist.html", nomentors=False, mentorlist=mentor_list)
+    else:
+        return render_template("mentorlist.html", nomentors=True)
 
-def checkListItems(list,checkTerm,final_list):
+def checkIsntNone(item):
+    if item != None:
+        return item.encode('utf-8')
+    else:
+        return 'None'
+
+def checkListItems(list,final_list):
     for item in list:
-        if item != 'None' and item != checkTerm:
+        if item != 'None':
             final_list.append(item)
     return final_list
+
+def makeNormalString(list, string):
+    firstIteration = True
+    for i, item in enumerate(list):
+        if i == len(list) - 1:
+            if firstIteration == True:
+                string += " {}.".format(item)
+            else:
+                string += "and {}.".format(item)
+        elif i < len(list) - 2:
+            string += "{}, ".format(item)
+            firstIteration = False
+        elif i == len(list) - 2:
+            string += "{} ".format(item)
+            firstIteration = False
+        elif "and more" in item:
+            string += " {}".format(item)
+            firstIteration = False
+    return string
 
 def makeString(list):
   str = ", ".join(list)
