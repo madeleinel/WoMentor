@@ -60,17 +60,144 @@ def showMenteeList():
     # TO DO: adapt this to work with multiple offers/languages/etc by making a string out of them
     return render_template("menteeList.html", nomentees=False, menteelist=mentordict)
 
+@app.route("/mentees")
+def showMenteeList():
+    # mentee = db.session.query(User).filter_by(mentor_mentee="mentee").first()
+      # print mentee.uid
+      # print mentee.scrn_name
+      mentee_list = []
+      allMentors = db.session.query(User).filter_by(mentee_mentee="mentee").all()
+      for mentee in allMentors:
+          menteedict = {}
+          menteedict['twitterhandle'] = mentee.scrn_name
+          menteedict['user_id'] = "https://twitter.com/intent/user?user_id=" + mentee.twitter_uid
+          menteedict['originaltweet'] = "http://twitter.com/anyuser/status/" + mentee.original_tweet_id
+          languageList = []
+          languageString = ""
+          languageObjList = mentee.languages
+          for langObj in languageObjList:
+              languageList.append(checkIsntNone(langObj.languages_1))
+              languageList.append(checkIsntNone(langObj.languages_2))
+              languageList.append(checkIsntNone(langObj.languages_3))
+              languageList.append(checkIsntNone(langObj.languages_4))
+          languageList = checkListItems(languageList, [])
+          languageString = makeNormalString(languageList, languageString)
+          menteedict['languages'] = languageString
+          skillList = []
+          skillString = ""
+          skillObjList = mentee.skills
+          for langObj in skillObjList:
+              skillList.append(checkIsntNone(langObj.skills_1))
+              skillList.append(checkIsntNone(langObj.skills_2))
+              skillList.append(checkIsntNone(langObj.skills_3))
+              skillList.append(checkIsntNone(langObj.skills_4))
+          skillList = checkListItems(skillList, [])
+          skillString = makeNormalString(skillList, skillString)
+          menteedict['skills'] = skillString
+          offerList = []
+          offerString = ""
+          offerObjList = mentee.offer
+          for langObj in offerObjList:
+              offerList.append(checkIsntNone(langObj.offer_1))
+              offerList.append(checkIsntNone(langObj.offer_2))
+              offerList.append(checkIsntNone(langObj.offer_3))
+          offerList = checkListItems(offerList, [])
+          offerString = makeNormalString(offerList, offerString)
+          menteedict['offers'] = offerString
+          mentee_list.append(menteedict)
+      if len(mentee_list) > 0:
+          return render_template("menteelist.html", nomentees=False, menteelist=mentee_list)
+      else:
+          return render_template("menteelist.html", nomentees=True)
+
 # to show a list of mentors, temporary placement just so i can test stuff
 @app.route("/mentors")
 def showMentorList():
-    mentordict = [
-        { "twitterhandle": "Anna__Anderson", "languages": "JavaScript, Python, Ruby", "skills": "Node, Angular", "offers": "Getting started, career advice", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
-        { "twitterhandle": "Jane__Smith", "languages": "JavaScript, Python", "offers": "Getting started, networking", "skills": "UX, react", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
-        { "twitterhandle": "Sophie__Greis", "languages": "HTML, CSS", "skills": "Design, UX, UI", "offers": "Career advice, technical guidance", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
-        { "twitterhandle": "Emma__Olsson", "languages": "Python, Java, C", "offers": "Networking, technical advice", "skills": "Data analysis, data mining", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" }
-        ]
-    # TO DO: adapt this to work with multiple offers/languages/etc by making a string out of them
-    return render_template("mentorList.html", nomentors=False, mentorlist=mentordict)
+    # mentor = db.session.query(User).filter_by(mentor_mentee="mentor").first()
+    # print mentor.uid
+    # print mentor.scrn_name
+    mentor_list = []
+    allMentors = db.session.query(User).filter_by(mentor_mentee="mentor").all()
+    for mentor in allMentors:
+        mentordict = {}
+        mentordict['twitterhandle'] = mentor.scrn_name
+        mentordict['user_id'] = "https://twitter.com/intent/user?user_id=" + mentor.twitter_uid
+        mentordict['originaltweet'] = "http://twitter.com/anyuser/status/" + mentor.original_tweet_id
+        languageList = []
+        languageString = ""
+        languageObjList = mentor.languages
+        for langObj in languageObjList:
+            languageList.append(checkIsntNone(langObj.languages_1))
+            languageList.append(checkIsntNone(langObj.languages_2))
+            languageList.append(checkIsntNone(langObj.languages_3))
+            languageList.append(checkIsntNone(langObj.languages_4))
+        languageList = checkListItems(languageList, [])
+        languageString = makeNormalString(languageList, languageString)
+        mentordict['languages'] = languageString
+        skillList = []
+        skillString = ""
+        skillObjList = mentor.skills
+        for langObj in skillObjList:
+            skillList.append(checkIsntNone(langObj.skills_1))
+            skillList.append(checkIsntNone(langObj.skills_2))
+            skillList.append(checkIsntNone(langObj.skills_3))
+            skillList.append(checkIsntNone(langObj.skills_4))
+        skillList = checkListItems(skillList, [])
+        skillString = makeNormalString(skillList, skillString)
+        mentordict['skills'] = skillString
+        offerList = []
+        offerString = ""
+        offerObjList = mentor.offer
+        for langObj in offerObjList:
+            offerList.append(checkIsntNone(langObj.offer_1))
+            offerList.append(checkIsntNone(langObj.offer_2))
+            offerList.append(checkIsntNone(langObj.offer_3))
+        offerList = checkListItems(offerList, [])
+        offerString = makeNormalString(offerList, offerString)
+        mentordict['offers'] = offerString
+        mentor_list.append(mentordict)
+    if len(mentor_list) > 0:
+        return render_template("mentorlist.html", nomentors=False, mentorlist=mentor_list)
+    else:
+        return render_template("mentorlist.html", nomentors=True)
+
+def checkIsntNone(item):
+    if item != None:
+        return item.encode('utf-8')
+    else:
+        return 'None'
+
+def checkListItems(list,final_list):
+    for item in list:
+        if item != 'None':
+            final_list.append(item)
+    return final_list
+
+def makeNormalString(list, string):
+    firstIteration = True
+    for i, item in enumerate(list):
+        if i == len(list) - 1:
+            if firstIteration == True:
+                string += " {}.".format(item)
+            else:
+                string += "and {}.".format(item)
+        elif i < len(list) - 2:
+            string += "{}, ".format(item)
+            firstIteration = False
+        elif i == len(list) - 2:
+            string += "{} ".format(item)
+            firstIteration = False
+        elif "and more" in item:
+            string += " {}".format(item)
+            firstIteration = False
+    return string
+
+def makeString(list):
+  str = ", ".join(list)
+  idx = str.rfind(',')
+  str = str[:idx] + " and " + str[idx+2:]
+  # Case of 'and more' still needs considering !!!!!
+  return str
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
