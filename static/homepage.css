@@ -8,15 +8,19 @@ body {
 .btn {
   height: 25rem;
   width: 25rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
   border-radius: 50%;
   margin-top: 8vh;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
+  -ms-align-items: center;
   align-items: center;
   justify-content: center;
   background-size: cover;
   background-position: center;
+  -webkit-box-shadow: 0 0 10px #5B5980;
   box-shadow: 0 0 10px #5B5980;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
 }
 

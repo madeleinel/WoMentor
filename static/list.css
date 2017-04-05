@@ -13,6 +13,7 @@
 .profile {
   width: 60vw;
   min-height: 20vh;
+  -webkit-box-shadow: 0 0 20px #5B5980;
   box-shadow: 0 0 20px #5B5980;
   margin: 4vh 0;
 }
