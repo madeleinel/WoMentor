@@ -40,18 +40,20 @@ a .signup {
 }
 
 .row {
-  position: fixed;
-  bottom: 4vh;
-  left: 11vw;
+  justify-content: space-around;
 }
 .row a h3 {
   font-size: 2rem;
-  margin: 0 7.5vw;
-  /*margin: 0 7.5vw 4vh 7.5vw;*/
 }
 
 footer {
   position: fixed;
   bottom: 0;
   background-color: #5B5980;
+}
+
+@media only screen and (max-width: 1280px) {
+  body {
+    overflow: scroll;
+  }
 }
