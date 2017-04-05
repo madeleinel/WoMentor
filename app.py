@@ -32,6 +32,11 @@ def showAboutPage():
     return render_template("about.html")
 
 # to show the Mentee sign-up page when on the "/mentee_signup" URL
+@app.route("/about")
+def showAboutPage():
+    return render_template("about.html")
+
+# to show the Mentee sign-up page when on the "/mentee_signup" URL
 @app.route("/mentee_signup")
 def showMenteeSignup():
     return render_template("signup.html")
