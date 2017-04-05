@@ -52,8 +52,16 @@ footer {
   background-color: #5B5980;
 }
 
-@media only screen and (max-width: 1280px) {
+/* //////// Media queries //////// */
+
+/*for tablets*/
+@media only screen and (max-width: 1200px) {
   body {
     overflow: scroll;
   }
+}
+
+/*for phones*/
+@media only screen and (max-device-width: 600px) {
+
 }

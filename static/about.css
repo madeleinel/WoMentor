@@ -30,3 +30,17 @@ footer {
   bottom: 0;
   background-color: #5B5980;
 }
+
+/* //////// Media queries //////// */
+
+/*for tablets*/
+@media only screen and (max-width: 1200px) {
+  body {
+    overflow: scroll;
+  }
+}
+
+/*for phones*/
+@media only screen and (max-device-width: 600px) {
+
+}
