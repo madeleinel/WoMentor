@@ -1,0 +1,75 @@
+/* Defining the specific structure and styling of the sign-up pages */
+
+body {
+  overflow: scroll;
+}
+
+.tweetUs h3 {
+  font-size: 2rem;
+  margin-top: 3.4rem;
+}
+
+.circle h4 {
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.rectangle h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+header h2 a {
+  text-decoration: underline;
+  color: white;
+  margin-left: 1rem;
+}
+
+main {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-align-items: center;
+  align-items: center;
+  padding-bottom: 24vh;
+}
+
+.rectangle {
+  min-height: 16vh;
+  margin: 4vh 0;
+}
+
+#mainOne {
+  background-color: #9290AA;
+}
+
+#mainTwo {
+  background-color: #ADACC0;
+  padding: 12vh;
+}
+
+#mainThree {
+  background-color: #C8C8D5;
+  padding: 12vh;
+}
+
+.tweet img {
+  width: 45vw;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 0 20px #5B5980;
+  box-shadow: 0 0 20px #5B5980;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
+}
+
+#mainOne .tweet img {
+  margin: 6vh 0;
+}
+
+#mainTwo .tweet img {
+  margin: 4vh 0;
+}
+
+.tweetUs {
+  background-position: top;
+  background-image: url("../static/images/mentee_signup.jpeg");

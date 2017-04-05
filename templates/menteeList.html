@@ -18,37 +18,37 @@
   </head>
   <body>
     <header>
-      <h2>Mentor profiles</h2>
+      <h2>Mentee profiles</h2>
       <div class="homeLink"><a href="/"><h3>WtT</h3></a></div>
     </header>
     <main>
-      {% if nomentors == True %}
-        <h3>We don't have any registered mentors at this time.<br/>Check back later and follow our Twitter bot for updates!</h3>
+      {% if nomentees == True %}
+        <h3>We don't have any registered mentees at this time.<br/>Check back later and follow our Twitter bot for updates!</h3>
       {% else %}
 
       <div class="column">
 
-        {% for mentor in mentorlist %}
+        {% for mentee in menteelist %}
         <div class="row profile">
           <div class="column graphics">
             <div class="photo">
               <img src="../static/images/tweet_profile_placeholder.png">
             </div>
             <div class="twitterHandle">
-              <p class="main-div-title">@{{ mentor.twitterhandle }}</p>
+              <p class="main-div-title">@{{ mentee.twitterhandle }}</p>
             </div>
           </div>
           <div class="column content">
             <div class="info">
-              <p>Languages: {{ mentor.languages }}</p>
-              <p>Skills: {{ mentor.skills }}</p>
-              <p>Offering: {{ mentor.offers }}</p>
+              <p>Languages: {{ mentee.languages }}</p>
+              <p>Skills: {{ mentee.skills }}</p>
+              <p>Offering: {{ mentee.offers }}</p>
             </div>
             <div class="contact">
-              <a href={{ mentor.originaltweet }} alt="original tweet">original tweet</a>
+              <a href={{ mentee.originaltweet }} alt="original tweet">original tweet</a>
                 <!-- <i class="fa fa-link" aria-hidden="true"></i> original tweet</a> -->
               <br>
-              <a href={{ mentor.twitterprofile}} alt="twitter profile">
+              <a href={{ mentee.twitterprofile}} alt="twitter profile">
                 <!-- twitter profile -->
                 <svg xmlns="http://www.w3.org/2000.svg" class="twitbird">
                   <use xlink:href="#twitter-bird"></use>
