@@ -16,7 +16,7 @@ def tweetParse(tweetString):
     substring_2 = tweetString[index_2:index_3]
     substring_3 = tweetString[index_3:tweetStringLength]
     substring_1 = toMultiStrings(substring_1)
-    substring_2 = toMultiStrings(substring_2)
+    substring_2 = toMultiStrings(substring_2, isOffer=True)
     substring_3 = toMultiStrings(substring_3, isOffer=True)
     substring_1, substring_2 = checkTheLists(substring_1, substring_2)
     substring_3 = checkOffers(substring_3)
