@@ -22,6 +22,7 @@ class MyStreamListener(tweepy.StreamListener):
         tweet_id_str = status.id_str
         twit_handle = status.user.screen_name
         mentor_mentee, languages,skills, offers = tweetParse(status.text.encode('utf-8'))
+        print twit_handle
         #query db for if user exists already as mentor/mentee
         dbCheckBool = dbCheck(user_id_str, mentor_mentee)
         if dbCheckBool == False:
@@ -29,6 +30,7 @@ class MyStreamListener(tweepy.StreamListener):
             addLangs(newUser, languages)
             addSkills(newUser, skills)
             addOffer(newUser, offers)
+            print "User {} added to database as a {}".format(twit_handle, mentor_mentee)
         else:
             print "User already exists!"
 
