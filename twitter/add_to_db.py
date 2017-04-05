@@ -1,4 +1,3 @@
-import ConfigParser
 from dbconnect import session, User, Offer, Skills, Languages
 from tweetparse import tweetParse
 
