@@ -39,9 +39,15 @@ a .signup {
   background-image: url("../static/images/mentor_signup.jpeg");
 }
 
+.row {
+  position: fixed;
+  bottom: 4vh;
+  left: 11vw;
+}
 .row a h3 {
   font-size: 2rem;
-  margin: 10vh 7.5vw;
+  margin: 0 7.5vw;
+  /*margin: 0 7.5vw 4vh 7.5vw;*/
 }
 
 footer {
