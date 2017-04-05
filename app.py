@@ -34,12 +34,12 @@ def showAboutPage():
 # to show the Mentee sign-up page when on the "/mentee_signup" URL
 @app.route("/mentee_signup")
 def showMenteeSignup():
-    return render_template("menteeSignup.html")
+    return render_template("signup.html")
 
 # to show the Mentor sign-up page when on the "/mentor_signup" URL
 @app.route("/mentor_signup")
 def showMentorSignup():
-    return render_template("mentorSignup.html")
+    return render_template("signup.html")
 
 # to show a list of mentors, temporary placement just so i can test stuff
 @app.route("/mentors")

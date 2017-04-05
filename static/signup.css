@@ -4,17 +4,9 @@ body {
   overflow: scroll;
 }
 
-#mainThree h3 {
-  text-shadow: none;ß
-}
-
-/*.btn_tweetUs h3 {
-  margin-top: 2.8rem;
-  text-shadow: 1px 2px 2px black;
-}*/
-
-#mainThree h3 {
-  color: black;
+.tweetUs h3 {
+  font-size: 2rem;
+  margin-top: 3.4rem;
 }
 
 .circle h4 {
@@ -23,10 +15,11 @@ body {
 }
 
 .rectangle h4 {
+  font-size: 1.4rem;
   margin-bottom: 1.5rem;
 }
 
-header a {
+header h2 a {
   text-decoration: underline;
   color: white;
   margin-left: 1rem;
@@ -63,15 +56,27 @@ main {
 .tweet img {
   width: 45vw;
   border-radius: 0.5rem;
-  margin: 4vh 0;
   box-shadow: 0 0 20px #5B5980;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
 }
 
-.btn_tweetUs {
-  background-image: url("../static/images/tweetUs_placeholder.jpeg");
-  background-size: cover;
-  background-position: center;
-  height: 14rem;
-  width: 14rem;
-  border-radius: 50%;
+#mainOne .tweet img {
+  margin: 6vh 0;
 }
+
+#mainTwo .tweet img {
+  margin: 4vh 0;
+}
+
+.tweetUs {
+  /*background-size: cover;*/
+  background-position: top;
+  background-image: url("../static/images/mentee_signup.jpeg");
+}
+
+/*#mentorTweet {
+  background-image: url("../static/images/mentor_signup.jpeg");
+}
+
+#menteeTweet {
+  background-image: url("../static/images/mentee_signup.jpeg");
+}*/
