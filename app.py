@@ -32,11 +32,6 @@ def showAboutPage():
     return render_template("about.html")
 
 # to show the Mentee sign-up page when on the "/mentee_signup" URL
-@app.route("/about")
-def showAboutPage():
-    return render_template("about.html")
-
-# to show the Mentee sign-up page when on the "/mentee_signup" URL
 @app.route("/mentee_signup")
 def showMenteeSignup():
     return render_template("signup.html")
@@ -51,22 +46,11 @@ def showMentorSignup():
 # to show a list of all mentee profiles
 @app.route("/mentees")
 def showMenteeList():
-    mentordict = [
-        { "twitterhandle": "Anna__Anderson", "languages": "JavaScript, Python, Ruby", "skills": "Node, Angular", "offers": "Getting started, career advice", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
-        { "twitterhandle": "Jane__Smith", "languages": "JavaScript, Python", "offers": "Getting started, networking", "skills": "UX, react", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
-        { "twitterhandle": "Sophie__Greis", "languages": "HTML, CSS", "skills": "Design, UX, UI", "offers": "Career advice, technical guidance", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
-        { "twitterhandle": "Emma__Olsson", "languages": "Python, Java, C", "offers": "Networking, technical advice", "skills": "Data analysis, data mining", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" }
-        ]
-    # TO DO: adapt this to work with multiple offers/languages/etc by making a string out of them
-    return render_template("menteeList.html", nomentees=False, menteelist=mentordict)
-
-@app.route("/mentees")
-def showMenteeList():
     # mentee = db.session.query(User).filter_by(mentor_mentee="mentee").first()
       # print mentee.uid
       # print mentee.scrn_name
       mentee_list = []
-      allMentors = db.session.query(User).filter_by(mentee_mentee="mentee").all()
+      allMentors = db.session.query(User).filter_by(mentor_mentee="mentee").all()
       for mentee in allMentors:
           menteedict = {}
           menteedict['twitterhandle'] = mentee.scrn_name
