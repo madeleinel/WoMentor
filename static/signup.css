@@ -73,3 +73,15 @@ main {
 .tweetUs {
   background-position: top;
   background-image: url("../static/images/mentee_signup.jpeg");
+
+  /* //////// Media queries //////// */
+
+  /*for tablets*/
+  @media only screen and (max-width: 1200px) {
+
+  }
+
+  /*for phones*/
+  @media only screen and (max-device-width: 600px) {
+
+  }

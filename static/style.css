@@ -159,3 +159,61 @@ footer {
 .homeLink h3 {
   margin-right: 0.4rem;
 }
+
+/* //////// Media queries //////// */
+
+/*for tablets*/
+@media only screen and (max-width: 1200px) {
+  h1 {
+    font-size: 8rem;
+    padding: 4vh;
+  }
+  h2 {
+    font-size: 5rem;
+    padding: 2rem;
+  }
+  h3 {
+    font-size: 3rem;
+    padding: 1rem 0;
+  }
+  h4 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 1.2rem;
+    padding: 0 1.5rem;
+    line-height: 1.4rem;
+  }
+  header {
+    height: 22vh;
+  }
+  .circle {
+    height: 14rem;
+    width: 14rem;
+    margin: 1rem;
+  }
+  .rectangle {
+    width: 50vw;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    padding: 3rem;
+  }
+  footer {
+    height: 4vh;
+    width: 100vw;
+  }
+  .homeLink {
+    top: 2vh;
+    left: 1vw;
+    height: 6rem;
+    width: 6rem;
+  }
+  .homeLink h3 {
+    margin-right: 0.4rem;
+  }
+}
+
+/*for phones*/
+@media only screen and (max-device-width: 600px) {
+
+}
