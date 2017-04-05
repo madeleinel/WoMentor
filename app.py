@@ -50,7 +50,7 @@ def showMentorList():
         mentordict['user_id'] = "https://twitter.com/intent/user?user_id=" + mentor.twitter_uid
         mentordict['originaltweet'] = "http://twitter.com/anyuser/status/" + mentor.original_tweet_id
         languageList = []
-        languageString = "Languages: "
+        languageString = ""
         languageObjList = mentor.languages
         for langObj in languageObjList:
             languageList.append(checkIsntNone(langObj.languages_1))
@@ -61,7 +61,7 @@ def showMentorList():
         languageString = makeNormalString(languageList, languageString)
         mentordict['languages'] = languageString
         skillList = []
-        skillString = "Skills: "
+        skillString = ""
         skillObjList = mentor.skills
         for langObj in skillObjList:
             skillList.append(checkIsntNone(langObj.skills_1))
@@ -72,7 +72,7 @@ def showMentorList():
         skillString = makeNormalString(skillList, skillString)
         mentordict['skills'] = skillString
         offerList = []
-        offerString = "Offers: "
+        offerString = ""
         offerObjList = mentor.offer
         for langObj in offerObjList:
             offerList.append(checkIsntNone(langObj.offer_1))
