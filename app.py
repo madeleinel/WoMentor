@@ -1,4 +1,4 @@
-import ConfigParser
+import ConfigParser, os
 from cordb import db
 from flask import Flask, render_template
 from flask_data_models import User, Offer, Languages, Skills
@@ -185,3 +185,6 @@ def makeString(list):
 
 if __name__ == "__main__":
     app.run(debug=True)
+    # Bind to PORT if defined, otherwise default to 5000
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
