@@ -1,15 +1,7 @@
-import ConfigParser
+from configvars import access_token, access_token_secret, consumer_key, consumer_secret
 from add_to_db import addUserToDB, addLangs, addSkills, addOffer, dbCheck
 from tweetparse import tweetParse
 import tweepy
-
-# get keys from config
-config = ConfigParser.ConfigParser()
-config.readfp(open('../twitoauth.cfg'))
-consumer_key = config.get('Consumer Keys', 'consumer_key')
-consumer_secret = config.get('Consumer Keys', 'consumer_secret')
-access_token = config.get('Access Keys', 'access_token')
-access_token_secret = config.get('Access Keys', 'access_token_secret')
 
 # setting auth from config
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
