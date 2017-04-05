@@ -1,4 +1,4 @@
-import ConfigParser
+import ConfigParser, os
 from cordb import db
 from flask import Flask, render_template
 from flask_data_models import User, Offer, Languages, Skills
