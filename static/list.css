@@ -1,10 +1,8 @@
-* {
-  /*border: 1px solid purple;*/
-}
+/* Defining the specific structure and styling of the profile list pages */
 
 .content p {
   padding: 0.5rem;
-  margin: 1rem 0 0 2rem;
+  margin: 1.5rem 0 0 2rem;
 }
 
 .contact a {
@@ -37,26 +35,22 @@
 .info {
   width: 100%;
   text-align: left;
-  /*background-color: yellow;*/
 }
 
 .contact {
   width: 100%;
   text-align: right;
-  /*background-color: orange;*/
 }
 
 svg {
   margin: 0 auto;
   padding: 0;
-  /*display: block;*/
   max-width: 100%;
 }
 
 .twitbird {
   max-width: 1.2rem;
   max-height: 1.2rem;
-  /*display: inline;*/
 }
 
 footer {

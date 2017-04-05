@@ -64,7 +64,6 @@ a {
 }
 
 header {
-  /*background-color: #5B5980;*/
   height: 22vh;
 }
 
@@ -115,14 +114,6 @@ main {
   background-color: white;
   padding: 3rem;
   box-shadow: 0 0 20px #5B5980;  /* horizontal(pos=right, new=left) vertical(pos=down, neg-up) blur colour */
-
-  /* Shape of right-pointing arrows */
-  /*-webkit-clip-path: polygon(92% 0, 100% 50%, 92% 100%, 0% 100%, 8% 50%, 0% 0%);
-  clip-path: polygon(92% 0, 100% 50%, 92% 100%, 0% 100%, 8% 50%, 0% 0%);*/
-
-  /* Shape of rectangles with cut-off corners */
-  /*-webkit-clip-path: polygon(8% 0, 92% 0, 100% 20%, 100% 80%, 92% 100%, 8% 100%, 0% 80%, 0% 20%);
-  clip-path: polygon(8% 0, 92% 0, 100% 20%, 100% 80%, 92% 100%, 8% 100%, 0% 80%, 0% 20%);*/
 }
 
 footer {
