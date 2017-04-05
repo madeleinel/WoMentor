@@ -46,14 +46,24 @@ def showMentorSignup():
 # to show a list of all mentee profiles
 @app.route("/mentees")
 def showMenteeList():
-    mentordict = [{ "twitterhandle": "fluffyunicorn", "languages": "javascript, python, ruby", "skills": "tight-rope walking, laughter", "offers": "getting started, happy unicorns", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" }, { "twitterhandle": "madeilenel", "languages": "javascript, python", "offers": "getting started, fika", "skills": "tea breaking, cartwheels", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492", "twitterhandle": "fluffyunicorn", "languages": "javascript, python, ruby", "skills": "tight-rope walking, laughter", "offers": "getting started, happy unicorns", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" }, { "twitterhandle": "madeilenel", "languages": "javascript, python", "offers": "getting started, fika", "skills": "tea breaking, cartwheels", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" }]
+    mentordict = [
+        { "twitterhandle": "Anna__Anderson", "languages": "JavaScript, Python, Ruby", "skills": "Node, Angular", "offers": "Getting started, career advice", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
+        { "twitterhandle": "Jane__Smith", "languages": "JavaScript, Python", "offers": "Getting started, networking", "skills": "UX, react", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
+        { "twitterhandle": "Sophie__Greis", "languages": "HTML, CSS", "skills": "Design, UX, UI", "offers": "Career advice, technical guidance", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
+        { "twitterhandle": "Emma__Olsson", "languages": "Python, Java, C", "offers": "Networking, technical advice", "skills": "Data analysis, data mining", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" }
+        ]
     # TO DO: adapt this to work with multiple offers/languages/etc by making a string out of them
     return render_template("menteeList.html", nomentees=False, menteelist=mentordict)
 
 # to show a list of mentors, temporary placement just so i can test stuff
 @app.route("/mentors")
 def showMentorList():
-    mentordict = [{ "twitterhandle": "fluffyunicorn", "languages": "javascript, python, ruby", "skills": "tight-rope walking, laughter", "offers": "getting started, happy unicorns", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" }, { "twitterhandle": "madeilenel", "languages": "javascript, python", "offers": "getting started, fika", "skills": "tea breaking, cartwheels", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492", "twitterhandle": "fluffyunicorn", "languages": "javascript, python, ruby", "skills": "tight-rope walking, laughter", "offers": "getting started, happy unicorns", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" }, { "twitterhandle": "madeilenel", "languages": "javascript, python", "offers": "getting started, fika", "skills": "tea breaking, cartwheels", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" }]
+    mentordict = [
+        { "twitterhandle": "Anna__Anderson", "languages": "JavaScript, Python, Ruby", "skills": "Node, Angular", "offers": "Getting started, career advice", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
+        { "twitterhandle": "Jane__Smith", "languages": "JavaScript, Python", "offers": "Getting started, networking", "skills": "UX, react", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
+        { "twitterhandle": "Sophie__Greis", "languages": "HTML, CSS", "skills": "Design, UX, UI", "offers": "Career advice, technical guidance", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
+        { "twitterhandle": "Emma__Olsson", "languages": "Python, Java, C", "offers": "Networking, technical advice", "skills": "Data analysis, data mining", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" }
+        ]
     # TO DO: adapt this to work with multiple offers/languages/etc by making a string out of them
     return render_template("mentorList.html", nomentors=False, mentorlist=mentordict)
 
