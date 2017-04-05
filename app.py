@@ -80,7 +80,7 @@ def showMentorList():
             offerList.append(checkIsntNone(langObj.offer_3))
         offerList = checkListItems(offerList, [])
         offerString = makeNormalString(offerList, offerString)
-        mentordict['offer'] = offerString
+        mentordict['offers'] = offerString
         mentor_list.append(mentordict)
     if len(mentor_list) > 0:
         return render_template("mentorlist.html", nomentors=False, mentorlist=mentor_list)
