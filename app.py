@@ -26,6 +26,11 @@ def create_app():
 def main():
     return render_template("index.html")
 
+# to show the About page when on the "/about" URL
+@app.route("/about")
+def showAboutPage():
+    return render_template("about.html")
+
 # to show the Mentee sign-up page when on the "/mentee_signup" URL
 @app.route("/about")
 def showAboutPage():
@@ -41,16 +46,31 @@ def showMenteeSignup():
 def showMentorSignup():
     return render_template("signup.html")
 
+##### for the profile pages: details & db paths need to be updated once the database is done
+
+# to show a list of all mentee profiles
+@app.route("/mentees")
+def showMenteeList():
+    mentordict = [
+        { "twitterhandle": "Anna__Anderson", "languages": "JavaScript, Python, Ruby", "skills": "Node, Angular", "offers": "Getting started, career advice", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
+        { "twitterhandle": "Jane__Smith", "languages": "JavaScript, Python", "offers": "Getting started, networking", "skills": "UX, react", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
+        { "twitterhandle": "Sophie__Greis", "languages": "HTML, CSS", "skills": "Design, UX, UI", "offers": "Career advice, technical guidance", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
+        { "twitterhandle": "Emma__Olsson", "languages": "Python, Java, C", "offers": "Networking, technical advice", "skills": "Data analysis, data mining", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" }
+        ]
+    # TO DO: adapt this to work with multiple offers/languages/etc by making a string out of them
+    return render_template("menteeList.html", nomentees=False, menteelist=mentordict)
+
 # to show a list of mentors, temporary placement just so i can test stuff
 @app.route("/mentors")
 def showMentorList():
-    mentor = db.session.query(User).filter_by(mentor_mentee="mentor").first()
-    print mentor.uid
-    print mentor.scrn_name
-    # mentordict = [{ "twitter": "fluffyunicorn", "languages": "javascript", "offer": "gestting started" }, { "twitter": "sallyjane", "languages": "haskell", "offer": "career advice"}]
+    mentordict = [
+        { "twitterhandle": "Anna__Anderson", "languages": "JavaScript, Python, Ruby", "skills": "Node, Angular", "offers": "Getting started, career advice", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
+        { "twitterhandle": "Jane__Smith", "languages": "JavaScript, Python", "offers": "Getting started, networking", "skills": "UX, react", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
+        { "twitterhandle": "Sophie__Greis", "languages": "HTML, CSS", "skills": "Design, UX, UI", "offers": "Career advice, technical guidance", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" },
+        { "twitterhandle": "Emma__Olsson", "languages": "Python, Java, C", "offers": "Networking, technical advice", "skills": "Data analysis, data mining", "originaltweet": "http://twitter.com/anyuser/status/203490203491094", "twitterprofile": "https://twitter.com/intent/user?user_id=23492" }
+        ]
     # TO DO: adapt this to work with multiple offers/languages/etc by making a string out of them
-    return render_template("mentorlist.html", nomentors=True)
-    # False, mentorlist=mentordict)
+    return render_template("mentorList.html", nomentors=False, mentorlist=mentordict)
 
 if __name__ == "__main__":
     app.run()

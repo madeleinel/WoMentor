@@ -1,0 +1,59 @@
+/* Defining the specific structure and styling of the profile list pages */
+
+.content p {
+  padding: 0.5rem;
+  margin: 1.5rem 0 0 2rem;
+}
+
+.contact a {
+  color: black;
+  margin-right: 2rem;
+}
+
+.profile {
+  width: 60vw;
+  min-height: 20vh;
+  -webkit-box-shadow: 0 0 20px #5B5980;
+  box-shadow: 0 0 20px #5B5980;
+  margin: 4vh 0;
+}
+
+.graphics {
+  width: 25%;
+  background-color: #ADACC0;
+}
+
+.photo img {
+  width: 100%;
+  height: auto;
+}
+
+.content {
+  width: 75%;
+  background-color: white;
+}
+
+.info {
+  width: 100%;
+  text-align: left;
+}
+
+.contact {
+  width: 100%;
+  text-align: right;
+}
+
+svg {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 100%;
+}
+
+.twitbird {
+  max-width: 1.2rem;
+  max-height: 1.2rem;
+}
+
+footer {
+  background-color: #5B5980;
+}

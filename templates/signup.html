@@ -23,7 +23,7 @@
       <div class="row">
         <div class="column tweet">
           {% if request.url_rule|string == url_for('showMentorSignup')|string %}
-            <img src="../static/images/tweet_mentee_1.png" alt="example mentor tweet #1">
+            <img src="../static/images/tweet_mentor_1.png" alt="example mentor tweet #1">
           {% elif request.url_rule|string == url_for('showMenteeSignup')|string %}
             <img src="../static/images/tweet_mentee_1.png" alt="example mentee tweet #1">
           {% endif %}
@@ -73,20 +73,20 @@
       <div class="column">
         {% if request.url_rule|string == url_for('showMentorSignup')|string %}
           <div class="tweet">
-            <img src="../static/images/tweet_mentee_2.png" alt="example mentor tweet #2">
+            <img src="../static/images/tweet_mentor_2.png" alt="example mentor tweet #2">
           </div>
           <div class="tweet">
-            <img src="../static/images/tweet_mentee_2.png" alt="example mentor tweet #3">
+            <img src="../static/images/tweet_mentor_1.png" alt="example mentor tweet #3">
           </div>
           <div class="tweet">
-            <img src="../static/images/tweet_mentee_2.png" alt="example mentor tweet #4">
+            <img src="../static/images/tweet_mentor_2.png" alt="example mentor tweet #4">
           </div>
         {% elif request.url_rule|string == url_for('showMenteeSignup')|string %}
           <div class="tweet">
             <img src="../static/images/tweet_mentee_2.png" alt="example mentee tweet #2">
           </div>
           <div class="tweet">
-            <img src="../static/images/tweet_mentee_2.png" alt="example mentee tweet #3">
+            <img src="../static/images/tweet_mentee_1.png" alt="example mentee tweet #3">
           </div>
           <div class="tweet">
             <img src="../static/images/tweet_mentee_2.png" alt="example mentee tweet #4">
@@ -136,9 +136,9 @@
       </div>
 
       {% if request.url_rule|string == url_for('showMentorSignup')|string %}
-        <a href="http://twitter.com/home?status=%23WomenToTech%20%23Mentor%20-langs%3A%20-skills%3A%20-offer%3A%20" target="_blank" class="column circle tweetUs" id="mentorTweet">
+        <a href="http://twitter.com/home?status=%23WomenToTech%20%23Mentor%20-langs%3A%20-skills%3A%20-offer%3A%20" target="_blank" class="column circle tweetUs">
       {% elif request.url_rule|string == url_for('showMenteeSignup')|string %}
-        <a href="http://twitter.com/home?status=%23WomenToTech%20%23Mentee%20-langs%3A%20-skills%3A%20-seek%3A%20" target="_blank" class="column circle tweetUs" id="menteeTweet">
+        <a href="http://twitter.com/home?status=%23WomenToTech%20%23Mentee%20-langs%3A%20-skills%3A%20-seek%3A%20" target="_blank" class="column circle tweetUs">
       {% endif %}
           <h3>Click here to<br/>tweet us now!</h3>
         </a>
