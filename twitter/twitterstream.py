@@ -30,9 +30,17 @@ class MyStreamListener(tweepy.StreamListener):
             addLangs(newUser, languages)
             addSkills(newUser, skills)
             addOffer(newUser, offers)
-            print "User {} added to database as a {}".format(twit_handle, mentor_mentee)
+            status = "@{} Congratulations, you have been added to the database as a {}.".format(twit_handle, mentor_mentee)
+            tweetReply(status,tweet_id_str)
         else:
-            print "User already exists!"
+            status = "@{} Oops! You already exist in the database as a {}!".format(twit_handle, mentor_mentee)
+            tweetReply(status,tweet_id_str)
+
+# tweet a reply to the person notifying them that they have been added to the db
+def tweetReply(status, original_tweet):
+    api = tweepy.API(auth)
+    result = api.update_status(status, original_tweet)
+    return result
 
 # creatig an instance of our class at this variable
 myStreamListener = MyStreamListener()
